@@ -15,7 +15,7 @@ elif platform == 'darwin':
     c_args = ['-O3']
     if 'TRAVIS' not in environ:
         c_args.append('-march=native')
-    cpp_args = c_args + ['-std=c++14', '-stdlib=libc++']
+    cpp_args = c_args + ['-std=c++1y', '-stdlib=libc++']
 else:
     try:
         from os import name as os_name
@@ -37,7 +37,7 @@ else:
         c_args.extend(['-s', '-static-libgcc', '-static-libstdc++'])
     elif 'TRAVIS' not in environ:
         c_args.append('-march=native')
-    cpp_args = c_args + ['-std=c++14']
+    cpp_args = c_args + ['-std=c++1y']
 
 libs = [('gzip', {
             'language': 'cpp',
